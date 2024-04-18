@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0.33
+    container_name: cambio_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3312:3306"
+    volumes:
+      - cambio-db:/var/lib/mysql
+
+volumes:
+  cambio-db:
