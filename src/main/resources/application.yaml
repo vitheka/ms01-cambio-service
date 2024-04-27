@@ -4,6 +4,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
 spring:
   application:
     name: ms01-cambio-service
@@ -23,3 +26,15 @@ spring:
     schemas: cambio_service
     user: root
     password: 1234
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # para enviar 100% da amostra
+    propagation:
+      type: w3c
+    baggage:
+      enabled: true
+    enabled: true
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans # alterar o endereco do Zipkin
