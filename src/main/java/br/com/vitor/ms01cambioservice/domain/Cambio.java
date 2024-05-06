@@ -3,6 +3,7 @@ package br.com.vitor.ms01cambioservice.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -15,6 +16,7 @@ import java.math.BigDecimal;
 @Entity
 public class Cambio implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
