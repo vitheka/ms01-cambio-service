@@ -1,0 +1,1 @@
+insert into cambio (id,from_currency,to_currency,conversion_factor) values (1,'USD','BRL',5.0)
